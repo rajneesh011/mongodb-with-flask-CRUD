@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<style>
+    body {
+
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        padding-bottom: 30px;
+    }
+
+
+    .box {
+        margin-top: 40px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        background: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, .1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    }
+
+    .box h4 {
+        margin: 0 0 10px;
+        padding: 0;
+        color: rgb(8, 99, 134);
+    }
+
+    .box input {
+        padding: 4px 0;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #999;
+    }
+
+    .box input[type="submit"] {
+        border-bottom: none;
+        cursor: pointer;
+        background: skyblue;
+        color: black;
+        margin-bottom: 0;
+    }
+
+    .box form dev {
+        position: relative;
+    }
+
+    .box form div label {
+        position: absolute;
+        left: 20px;
+        position: absolute;
+        pointer-events: none;
+        color: #999;
+        transition: .5s;
+    }
+
+    .box input:focus~label,
+    .box input:valid~label {
+        left: 3;
+        color: skyblue;
+        font-size: 5px;
+        font-weight: bold;
+    }
+
+    .box input:focus,
+    .box input:valid {
+        border-bottom: 2px solid skyblue;
+    }
+</style>
+
+<body>
+    <img src={{ url_for('static',filename='./homepage.png' ) }} />
+    <div class="box">
+        <h4>Enter Details</h4>
+        <form action="/update" method="POST">
+            <div>
+                <input type="text" name="id" required />
+                <label for="">ID</label>
+            </div>
+            <div>
+                <input type="text" name="name" required />
+                <label for="">Name</label>
+            </div>
+            <div>
+                <input type="text" name="roll" required />
+                <label for="">Roll No.</label>
+            </div>
+            <div>
+                <input type="text" name="marks" required />
+                <label for="">Marks</label>
+            </div>
+            <div>
+                <input type="text" name="age" required />
+                <label for="">Age</label>
+            </div>
+            <input type="submit" class="btn" />
+        </form>
+    </div>
+</body>
+
+</html>
